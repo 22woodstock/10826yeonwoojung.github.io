@@ -2,251 +2,150 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>C3 식물과 C4 식물</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Projects</title>
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
 body{
-font-family:Arial,sans-serif;
-background:#eef2f7;
-}
-
-/* 전체 */
-.wrapper{
+margin:0;
+font-family:Arial;
 display:flex;
-min-height:100vh;
+background:#f5f7fb;
 }
 
-/* 왼쪽 고정 사이드바 */
+/* 왼쪽 */
 .sidebar{
-width:280px;
+width:260px;
+height:100vh;
 background:white;
-padding:40px 25px;
-box-shadow:3px 0 15px rgba(0,0,0,.08);
+padding:30px;
+box-shadow:2px 0 10px rgba(0,0,0,.08);
 position:fixed;
-height:100%;
-left:0;
-top:0;
 }
 
 .sidebar h1{
 font-size:45px;
-margin-bottom:35px;
+margin-bottom:30px;
+}
+
+.sidebar button{
+display:block;
+width:100%;
+margin-bottom:18px;
+padding:20px;
+border:none;
+border-radius:18px;
+font-size:28px;
+font-weight:bold;
+cursor:pointer;
+background:#eceff5;
+}
+
+.sidebar button.active{
+background:black;
+color:white;
+}
+
+/* 오른쪽 */
+.main{
+margin-left:320px;
+padding:60px;
+max-width:900px;
 }
 
 .tab{
-display:block;
-width:100%;
-border:none;
-margin-bottom:20px;
-padding:22px;
-font-size:28px;
-font-weight:bold;
-border-radius:20px;
-cursor:pointer;
-background:#edf1f7;
-transition:.25s;
-text-align:left;
-}
-
-.tab:hover{
-transform:translateX(8px);
+display:none;
+background:white;
+padding:50px;
+border-radius:30px;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
 }
 
 .tab.active{
-background:#111;
-color:white;
-}
-
-/* 오른쪽 내용 */
-.content{
-margin-left:320px;
-padding:60px;
-width:calc(100% - 320px);
-}
-
-.panel{
-display:none;
-background:white;
-padding:55px;
-border-radius:35px;
-max-width:1000px;
-margin:auto;
-box-shadow:0 12px 30px rgba(0,0,0,.07);
-}
-
-.panel.active{
 display:block;
 }
 
-h2{
-font-size:56px;
-margin-bottom:35px;
-}
-
-h3{
-margin-top:30px;
-margin-bottom:20px;
-font-size:34px;
-}
-
 ul{
-padding-left:35px;
 font-size:28px;
-line-height:2;
-}
-
-.back{
-display:inline-block;
-margin-top:50px;
-background:#111;
-color:white;
-padding:16px 30px;
-border-radius:15px;
-text-decoration:none;
-}
-
-/* 모바일 */
-@media(max-width:900px){
-
-.wrapper{
-display:block;
-}
-
-.sidebar{
-position:relative;
-width:100%;
-height:auto;
-display:flex;
-gap:15px;
-overflow-x:auto;
-}
-
-.sidebar h1{
-display:none;
-}
-
-.tab{
-min-width:180px;
-font-size:20px;
-margin:0;
-}
-
-.content{
-margin-left:0;
-width:100%;
-padding:25px;
+line-height:1.8;
 }
 
 h2{
-font-size:36px;
+font-size:54px;
 }
 
-ul{
-font-size:20px;
-}
-
+a{
+display:inline-block;
+margin-top:40px;
+padding:15px 28px;
+background:black;
+color:white;
+text-decoration:none;
+border-radius:14px;
 }
 </style>
 </head>
 <body>
 
-<div class="wrapper">
-
 <div class="sidebar">
 <h1>PROJECTS</h1>
 
-<button class="tab active"
-onclick="openTab('one',this)">
+<button class="active" onclick="showTab('t1',this)">
 sidebar1
 </button>
 
-<button class="tab"
-onclick="openTab('two',this)">
+<button onclick="showTab('t2',this)">
 sidebar2
 </button>
 
-<button class="tab"
-onclick="openTab('three',this)">
+<button onclick="showTab('t3',this)">
 sidebar3
 </button>
 
 </div>
 
 
-<div class="content">
+<div class="main">
 
-<div id="one" class="panel active">
-
+<div id="t1" class="tab active">
 <h2>C3 식물과 C4 식물</h2>
 
-<h3>1-1 C3 식물</h3>
 <ul>
-<li>칼빈 회로를 통해 직접 CO₂ 고정</li>
-<li>Rubisco가 산소와 반응하면 광호흡 발생</li>
-<li>에너지 손실 존재</li>
-<li>온대 지역 적응</li>
-<li>벼, 밀, 콩 등</li>
+<li>칼빈 회로를 통한 CO₂ 고정</li>
+<li>광호흡 발생</li>
+<li>대표: 벼, 밀</li>
+<li>C4 식물은 고온 적응</li>
+<li>대표: 옥수수, 사탕수수</li>
 </ul>
 
-<h3>1-2 C4 식물</h3>
-<ul>
-<li>4탄소 화합물로 먼저 고정</li>
-<li>광호흡 억제</li>
-<li>고온·건조 환경 적응</li>
-<li>옥수수, 사탕수수 등</li>
-</ul>
-
-<h3>2 요약</h3>
-<ul>
-<li>C3/C4는 탄소고정 전략 차이</li>
-<li>C4는 효율 극대화 진화 전략</li>
-<li>단일세포 C4도 존재</li>
-</ul>
-
-<a class="back" href="index.html">
+<a href="index.html">
 홈으로 돌아가기
 </a>
-
 </div>
 
 
-<div id="two" class="panel">
+<div id="t2" class="tab">
 <h2>sidebar2</h2>
-<ul>
-<li>여기에 활용방안 넣기</li>
-<li>예: 농업 생산성 향상</li>
-<li>기후변화 대응 응용</li>
-</ul>
+<p>내용2</p>
 </div>
 
-
-<div id="three" class="panel">
+<div id="t3" class="tab">
 <h2>sidebar3</h2>
-<ul>
-<li>참고문헌</li>
-<li>추가 탐구자료</li>
-</ul>
+<p>내용3</p>
 </div>
 
 </div>
-</div>
+
 
 <script>
-function openTab(id,btn){
+function showTab(id,btn){
 
-document.querySelectorAll('.panel').forEach(p=>{
-p.classList.remove('active');
+document.querySelectorAll('.tab').forEach(x=>{
+x.classList.remove('active');
 });
 
-document.querySelectorAll('.tab').forEach(t=>{
-t.classList.remove('active');
+document.querySelectorAll('button').forEach(x=>{
+x.classList.remove('active');
 });
 
 document.getElementById(id).classList.add('active');
