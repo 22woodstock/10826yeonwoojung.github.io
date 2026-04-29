@@ -1,40 +1,543 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>C3식물과 C4식물, 그리고 활용방안에 대해</title>
-  </head>
-  <body>
-    <h1>C3 식물과 C4식물, 그리고 활용방안에 대해</h1>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C3식물과 C4식물, 그리고 활용방안</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#f7f9fc,#e9eef7);
+height:100vh;
+display:flex;
+}
+
+.container{
+display:flex;
+width:100%;
+height:100vh;
+}
+
+/* 사이드바 */
+.sidebar{
+width:260px;
+background:white;
+padding:30px 20px;
+box-shadow:4px 0 18px rgba(0,0,0,.08);
+display:flex;
+flex-direction:column;
+gap:18px;
+}
+
+.sidebar-title{
+font-size:30px;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+.tab-btn{
+border:none;
+background:#f4f6fb;
+padding:20px;
+text-align:left;
+font-size:20px;
+font-weight:600;
+border-radius:20px;
+cursor:pointer;
+transition:.3s;
+}
+
+.tab-btn:hover{
+transform:translateX(8px);
+background:#eef2ff;
+}
+
+.tab-btn.active{
+background:#111;
+color:white;
+transform:translateX(8px);
+}
+
+/* 내용 */
+.content{
+flex:1;
+padding:50px;
+overflow-y:auto;
+}
+
+.panel{
+display:none;
+background:white;
+padding:50px;
+border-radius:30px;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+animation:fade .4s ease;
+max-width:1000px;
+margin:auto;
+}
+
+.panel.active{
+display:block;
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+h1{
+font-size:48px;
+margin-bottom:30px;
+}
+
+h2{
+margin-top:35px;
+margin-bottom:15px;
+font-size:32px;
+}
+
+ul{
+padding-left:28px;
+line-height:2;
+font-size:22px;
+}
+
+a{
+display:inline-block;
+margin-top:40px;
+text-decoration:none;
+background:#111;
+color:white;
+padding:15px 28px;
+border-radius:15px;
+}
+
+@media(max-width:900px){
+
+.container{
+flex-direction:column;
+}
+
+.sidebar{
+width:100%;
+flex-direction:row;
+overflow-x:auto;
+}
+
+.sidebar-title{
+display:none;
+}
+
+.tab-btn{
+min-width:180px;
+}
+
+.content{
+padding:25px;
+}
+
+h1{
+font-size:36px;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- 왼쪽 탭 -->
+<div class="sidebar">
+<div class="sidebar-title">PROJECTS</div>
+
+<button class="tab-btn active"
+onclick="openTab('tab1',this)">
+sidebar1
+</button>
+
+<button class="tab-btn"
+onclick="openTab('tab2',this)">
+sidebar2
+</button>
+
+<button class="tab-btn"
+onclick="openTab('tab3',this)">
+sidebar3
+</button>
+
+</div>
+
+<!-- 오른쪽 내용 -->
+<div class="content">
+
+<!-- Sidebar1 -->
+<div id="tab1" class="panel active">
+
+<h1>C3 식물과 C4식물, 그리고 활용방안에 대해</h1>
 
 <h2>1-1 C3 식물</h2>
 <ul>
-  <li>칼빈 회로를 통해 직접 CO₂를 고정</li>
-  <li>Rubisco 효소가 CO₂를 고정하지만 O₂와도 반응 → 광호흡 발생</li>
-  <li>광호흡으로 인해 에너지 손실 발생</li>
-  <li>온대 지역에서 주로 분포</li>
-  <li>대표 식물: 벼, 밀, 콩</li>
-  <li>구조가 단순하고 에너지 소비가 적음</li>
+<li>칼빈 회로를 통해 직접 CO₂를 고정</li>
+<li>Rubisco 효소가 CO₂를 고정하지만 O₂와도 반응 → 광호흡 발생</li>
+<li>광호흡으로 인해 에너지 손실 발생</li>
+<li>온대 지역에서 주로 분포</li>
+<li>대표 식물: 벼, 밀, 콩</li>
+<li>구조가 단순하고 에너지 소비가 적음</li>
 </ul>
 
 <h2>1-2 C4 식물</h2>
 <ul>
-  <li>CO₂를 먼저 4탄소 화합물로 고정 후 칼빈 회로로 전달</li>
-  <li>광호흡을 억제하는 구조적/생화학적 메커니즘 보유</li>
-  <li>고온·건조 환경에서 높은 광합성 효율</li>
-  <li>두 단계 탄소 고정 → 에너지 소비는 증가</li>
-  <li>대표 식물: 옥수수, 사탕수수</li>
-  <li>CO₂ 농축 효과 → Rubisco 효율 증가</li>
+<li>CO₂를 먼저 4탄소 화합물로 고정 후 칼빈 회로로 전달</li>
+<li>광호흡 억제 메커니즘 보유</li>
+<li>고온·건조 환경에서 높은 광합성 효율</li>
+<li>두 단계 탄소 고정 → 에너지 소비 증가</li>
+<li>대표 식물: 옥수수, 사탕수수</li>
+<li>CO₂ 농축 효과 → Rubisco 효율 증가</li>
 </ul>
 
 <h2>2 요약 (확장 개념)</h2>
 <ul>
-  <li>광합성은 C3, C4, 단일세포 C4 방식으로 구분됨</li>
-  <li>C4 식물은 고온 환경에서 광호흡을 줄이도록 진화</li>
-  <li>단일세포 C4 식물은 한 세포 안에서 C3 + C4 기능을 동시에 수행</li>
-  <li>서로 다른 위치의 엽록체가 기능적으로 분리되어 작용</li>
-  <li>탄소 고정 효율을 극대화하기 위한 진화적 전략</li>
+<li>광합성은 C3, C4, 단일세포 C4 방식으로 구분됨</li>
+<li>C4 식물은 고온 환경에서 광호흡을 줄이도록 진화</li>
+<li>단일세포 C4 식물은 한 세포 안에서 C3 + C4 기능 동시 수행</li>
+<li>서로 다른 위치의 엽록체가 기능적으로 분리되어 작용</li>
+<li>탄소 고정 효율을 극대화하기 위한 진화적 전략</li>
 </ul>
 
 <a href="index.html">홈으로 돌아가기</a>
-  </body>
+
+</div>
+
+
+<!-- Sidebar2 -->
+<div id="tab2" class="panel">
+<h1>Sidebar2</h1>
+
+<p style="font-size:24px; line-height:1.8;">
+여기에 활용방안, 응용 사례 등을 넣으면 됩니다.
+</p>
+
+</div>
+
+
+<!-- Sidebar3 -->
+<div id="tab3" class="panel">
+<h1>Sidebar3</h1>
+
+<p style="font-size:24px; line-height:1.8;">
+여기에 참고문헌이나 추가 자료 넣으면 됩니다.
+</p>
+
+</div>
+
+</div>
+</div>
+
+<script>
+function openTab(tabId,button){
+
+let panels=document.querySelectorAll('.panel');
+let buttons=document.querySelectorAll('.tab-btn');
+
+panels.forEach(panel=>{
+panel.classList.remove('active');
+});
+
+buttons.forEach(btn=>{
+btn.classList.remove('active');
+});
+
+document.getElementById(tabId).classList.add('active');
+button.classList.add('active');
+
+}
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C3식물과 C4식물, 그리고 활용방안</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#f7f9fc,#e9eef7);
+height:100vh;
+display:flex;
+}
+
+.container{
+display:flex;
+width:100%;
+height:100vh;
+}
+
+/* 사이드바 */
+.sidebar{
+width:260px;
+background:white;
+padding:30px 20px;
+box-shadow:4px 0 18px rgba(0,0,0,.08);
+display:flex;
+flex-direction:column;
+gap:18px;
+}
+
+.sidebar-title{
+font-size:30px;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+.tab-btn{
+border:none;
+background:#f4f6fb;
+padding:20px;
+text-align:left;
+font-size:20px;
+font-weight:600;
+border-radius:20px;
+cursor:pointer;
+transition:.3s;
+}
+
+.tab-btn:hover{
+transform:translateX(8px);
+background:#eef2ff;
+}
+
+.tab-btn.active{
+background:#111;
+color:white;
+transform:translateX(8px);
+}
+
+/* 내용 */
+.content{
+flex:1;
+padding:50px;
+overflow-y:auto;
+}
+
+.panel{
+display:none;
+background:white;
+padding:50px;
+border-radius:30px;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+animation:fade .4s ease;
+max-width:1000px;
+margin:auto;
+}
+
+.panel.active{
+display:block;
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+h1{
+font-size:48px;
+margin-bottom:30px;
+}
+
+h2{
+margin-top:35px;
+margin-bottom:15px;
+font-size:32px;
+}
+
+ul{
+padding-left:28px;
+line-height:2;
+font-size:22px;
+}
+
+a{
+display:inline-block;
+margin-top:40px;
+text-decoration:none;
+background:#111;
+color:white;
+padding:15px 28px;
+border-radius:15px;
+}
+
+@media(max-width:900px){
+
+.container{
+flex-direction:column;
+}
+
+.sidebar{
+width:100%;
+flex-direction:row;
+overflow-x:auto;
+}
+
+.sidebar-title{
+display:none;
+}
+
+.tab-btn{
+min-width:180px;
+}
+
+.content{
+padding:25px;
+}
+
+h1{
+font-size:36px;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- 왼쪽 탭 -->
+<div class="sidebar">
+<div class="sidebar-title">PROJECTS</div>
+
+<button class="tab-btn active"
+onclick="openTab('tab1',this)">
+sidebar1
+</button>
+
+<button class="tab-btn"
+onclick="openTab('tab2',this)">
+sidebar2
+</button>
+
+<button class="tab-btn"
+onclick="openTab('tab3',this)">
+sidebar3
+</button>
+
+</div>
+
+<!-- 오른쪽 내용 -->
+<div class="content">
+
+<!-- Sidebar1 -->
+<div id="tab1" class="panel active">
+
+<h1>C3 식물과 C4식물, 그리고 활용방안에 대해</h1>
+
+<h2>1-1 C3 식물</h2>
+<ul>
+<li>칼빈 회로를 통해 직접 CO₂를 고정</li>
+<li>Rubisco 효소가 CO₂를 고정하지만 O₂와도 반응 → 광호흡 발생</li>
+<li>광호흡으로 인해 에너지 손실 발생</li>
+<li>온대 지역에서 주로 분포</li>
+<li>대표 식물: 벼, 밀, 콩</li>
+<li>구조가 단순하고 에너지 소비가 적음</li>
+</ul>
+
+<h2>1-2 C4 식물</h2>
+<ul>
+<li>CO₂를 먼저 4탄소 화합물로 고정 후 칼빈 회로로 전달</li>
+<li>광호흡 억제 메커니즘 보유</li>
+<li>고온·건조 환경에서 높은 광합성 효율</li>
+<li>두 단계 탄소 고정 → 에너지 소비 증가</li>
+<li>대표 식물: 옥수수, 사탕수수</li>
+<li>CO₂ 농축 효과 → Rubisco 효율 증가</li>
+</ul>
+
+<h2>2 요약 (확장 개념)</h2>
+<ul>
+<li>광합성은 C3, C4, 단일세포 C4 방식으로 구분됨</li>
+<li>C4 식물은 고온 환경에서 광호흡을 줄이도록 진화</li>
+<li>단일세포 C4 식물은 한 세포 안에서 C3 + C4 기능 동시 수행</li>
+<li>서로 다른 위치의 엽록체가 기능적으로 분리되어 작용</li>
+<li>탄소 고정 효율을 극대화하기 위한 진화적 전략</li>
+</ul>
+
+<a href="index.html">홈으로 돌아가기</a>
+
+</div>
+
+
+<!-- Sidebar2 -->
+<div id="tab2" class="panel">
+<h1>Sidebar2</h1>
+
+<p style="font-size:24px; line-height:1.8;">
+여기에 활용방안, 응용 사례 등을 넣으면 됩니다.
+</p>
+
+</div>
+
+
+<!-- Sidebar3 -->
+<div id="tab3" class="panel">
+<h1>Sidebar3</h1>
+
+<p style="font-size:24px; line-height:1.8;">
+여기에 참고문헌이나 추가 자료 넣으면 됩니다.
+</p>
+
+</div>
+
+</div>
+</div>
+
+<script>
+function openTab(tabId,button){
+
+let panels=document.querySelectorAll('.panel');
+let buttons=document.querySelectorAll('.tab-btn');
+
+panels.forEach(panel=>{
+panel.classList.remove('active');
+});
+
+buttons.forEach(btn=>{
+btn.classList.remove('active');
+});
+
+document.getElementById(tabId).classList.add('active');
+button.classList.add('active');
+
+}
+</script>
+
+</body>
 </html>
