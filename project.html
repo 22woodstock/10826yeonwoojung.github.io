@@ -15,27 +15,27 @@ background:#f5f7fb;
 
 /* 왼쪽 */
 .sidebar{
-width:260px;
+width:130px; /* 260 → 130 (반으로) */
 height:100vh;
 background:white;
-padding:30px;
+padding:15px;
 box-shadow:2px 0 10px rgba(0,0,0,.08);
 position:fixed;
 }
 
 .sidebar h1{
-font-size:45px;
-margin-bottom:30px;
+font-size:11px; /* 45 → 약 1/4 */
+margin-bottom:15px;
 }
 
 .sidebar button{
 display:block;
 width:100%;
-margin-bottom:18px;
-padding:20px;
+margin-bottom:10px;
+padding:10px;
 border:none;
-border-radius:18px;
-font-size:28px;
+border-radius:10px;
+font-size:7px; /* 28 → 약 1/4 */
 font-weight:bold;
 cursor:pointer;
 background:#eceff5;
@@ -48,16 +48,16 @@ color:white;
 
 /* 오른쪽 */
 .main{
-margin-left:320px;
-padding:60px;
+margin-left:160px; /* 사이드바 줄인 만큼 같이 줄임 */
+padding:30px;
 max-width:900px;
 }
 
 .tab{
 display:none;
 background:white;
-padding:50px;
-border-radius:30px;
+padding:25px;
+border-radius:20px;
 box-shadow:0 5px 20px rgba(0,0,0,.08);
 }
 
@@ -66,22 +66,23 @@ display:block;
 }
 
 ul{
-font-size:28px;
-line-height:1.8;
+font-size:7px; /* 28 → 1/4 */
+line-height:1.5;
 }
 
 h2{
-font-size:54px;
+font-size:13.5px; /* 54 → 1/4 */
 }
 
 a{
 display:inline-block;
-margin-top:40px;
-padding:15px 28px;
+margin-top:20px;
+padding:8px 14px;
 background:black;
 color:white;
 text-decoration:none;
-border-radius:14px;
+border-radius:10px;
+font-size:7px;
 }
 </style>
 </head>
