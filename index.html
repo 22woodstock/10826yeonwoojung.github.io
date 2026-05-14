@@ -1,35 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>c3식물과 C4식물에 대해</title>
+  <meta charset="UTF-8">
+  <title>C3식물과 C4식물에 대해</title>
 
   <style>
 
     body {
 
-      /* 중요 */
-      position: relative;
-      overflow: hidden;
-
-      /* 기존 그라데이션 유지 */
-      background: linear-gradient(135deg, #b7e4c7, #95d5b2, #74c69d, #52b788);
-
-      color: #1b4332;
-
-      text-align: center;
-      height: 100vh;
+      /* 배경 설정 */
       margin: 0;
+      height: 100vh;
 
+      /* 가운데 정렬 */
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
 
+      text-align: center;
+
       font-family: Arial, sans-serif;
+
+      /* 초록 그라데이션 */
+      background: linear-gradient(
+        135deg,
+        #b7e4c7,
+        #95d5b2,
+        #74c69d,
+        #52b788
+      );
+
+      color: #1b4332;
+
+      overflow: hidden;
+
+      position: relative;
     }
 
     /* 흐린 배경 이미지 */
-    body::before{
+    body::before {
 
       content: "";
 
@@ -41,26 +51,28 @@
       transform: translate(-50%, -50%);
 
       width: 900px;
-
       height: 900px;
 
-      /* 배경 이미지 */
-      background: url("C3C4비교.png") center center no-repeat;
+      background:
+      url("https://raw.githubusercontent.com/22woodstock/10826yeonwoojung.github.io/main/C3C4%EB%B9%84%EA%B5%90.jpg")
+      center center no-repeat;
 
       background-size: contain;
 
       /* 흐리게 */
       opacity: 0.12;
 
-      /* 살짝 블러 */
+      /* 윤곽 느낌 */
       filter: blur(2px);
 
       z-index: 0;
     }
 
-    /* 내용이 이미지 위로 올라오게 */
-    h1, p, img, a{
+    /* 글자가 배경 위로 오게 */
+    h1, p, a {
+
       position: relative;
+
       z-index: 1;
     }
 
@@ -71,29 +83,19 @@
 
       color: #0b3d2e;
 
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
 
-    p{
-      font-size: 22px;
-      margin-bottom: 30px;
-    }
+    /* 부제목 */
+    p {
 
-    /* 메인 이미지 */
-    img{
+      font-size: 24px;
 
-      width: 500px;
-
-      background: transparent;
-
-      margin-bottom: 50px;
-
-      position: relative;
-      z-index: 1;
+      margin-bottom: 70px;
     }
 
     /* 버튼 */
-    .project-btn{
+    .project-btn {
 
       display: inline-block;
 
@@ -114,10 +116,12 @@
       transition: 0.2s;
 
       position: relative;
+
       z-index: 1;
     }
 
-    .project-btn:hover{
+    /* 마우스 올렸을 때 */
+    .project-btn:hover {
 
       background-color: #24543f;
 
@@ -131,12 +135,10 @@
 
   <h1>C3식물과 C4식물에 대해</h1>
 
-  <p>사이언스 아카이브 포트폴리오 10826 정연우</p>
+  <p>
+    사이언스 아카이브 포트폴리오 10826 정연우
+  </p>
 
-  <!-- 기존 메인 이미지 -->
-  <img src="C3C4비교.jpg">
-
-  <!-- 버튼 -->
   <a href="project.html" class="project-btn">
     프로젝트 보기
   </a>
