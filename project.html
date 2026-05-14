@@ -154,6 +154,31 @@ box-shadow:0 5px 20px rgba(0,0,0,.08);
 
 border-left:8px solid #2d6a4f;
 }
+/* 가로 배치 */
+.type-container{
+
+display:flex;
+
+gap:20px;
+
+margin-top:20px;
+
+margin-bottom:30px;
+}
+
+/* 작은 박스 */
+.small-box{
+
+flex:1;
+
+padding:20px;
+}
+
+/* 작은 박스 안 제목 */
+.small-box h2{
+
+font-size:18px;
+}
 
 </style>
 </head>
@@ -233,25 +258,65 @@ C3 식물에서는 엽육세포에서 캘빈회로가 돌아가지만, C4 식물
 C4식물은 NADP-ME형, NAD-ME형, PEP-CK형으로 나뉜다.
 </p>
 
+<!-- 가로 박스 영역 -->
+<div class="type-container">
+
+  <!-- 첫 번째 박스 -->
+  <div class="info-box small-box">
+
+    <h2>C4식물 - NADP-ME형</h2>
+
+    <p>
+    NADP-ME형에 대한 설명 aaa
+    </p>
+
+  </div>
+
+  <!-- 두 번째 박스 -->
+  <div class="info-box small-box">
+
+    <h2>C4식물 - NAD-ME형</h2>
+
+    <p>
+    NAD-ME형에 대한 설명 bbb
+    </p>
+
+  </div>
+
+  <!-- 세 번째 박스 -->
+  <div class="info-box small-box">
+
+    <h2>C4식물 - PEP-CK형</h2>
+
+    <p>
+    PEP-CK형에 대한 설명 ccc
+    </p>
+
+  </div>
+
+</div>
+
+
 <h2>C4식물의 진화</h2>
 
 <p>
 
 C4식물은 백악기(약 1억 3500만~6500만 년 전)에 처음 출현한 것으로 보이며,
 대기 중 이산화탄소 농도가 감소한 시기에 증가하였다.<br>
+
 낮은 이산화탄소 농도에서는 C3식물보다 광호흡이 적은 C4식물이 생육에
 유리했기 때문에 C4식물이 낮은 이산화탄소 환경에 적응했다는 가설이 있다.
+
 또한 건조한 환경에서도 잘 자라는 특징 때문에 건조한 기후에 적응하면서
 진화했다는 가설도 존재한다.<br>
+
 현재는 단자엽식물과 쌍자엽식물 모두에서 C4식물이 발견되기 때문에,
 속씨식물이 두 갈래로 나뉘기 이전부터 관련 유전자군이 존재했던 것으로 본다.
 
 </p>
 
 </div>
-
-
-
+  
 <!-- 세 번째 탭 -->
 <div id="t3" class="tab">
 
