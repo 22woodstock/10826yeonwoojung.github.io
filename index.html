@@ -1,40 +1,106 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>c3식물과 C4식물에 대해</title>
-  </head>
-  <body>
-    <h1>C3식물과 C4식물에 대해</h1>
-    <p>사이언스 아카이브 포트폴리오 10826 정연우</p>
-    <a href="project.html">프로젝트 보기</a>
-  </body>
+<head>
+  <title>c3식물과 C4식물에 대해</title>
 
   <style>
-  body {
-    /* 부드러운 그라데이션 */
-    background: linear-gradient(135deg, #b7e4c7, #95d5b2, #74c69d, #52b788);
-    
-    /* 글씨 색 (어울리게 어두운 초록톤) */
-    color: #1b4332;
+    body {
 
-    text-align: center;
-    height: 100vh;
-    margin: 0;
-  }
+      /* 배경 그라데이션 */
+      background: linear-gradient(135deg, #b7e4c7, #95d5b2, #74c69d, #52b788);
 
-  h1 {
-    color: #081c15; /* 더 진하게 강조 */
-  }
+      /* 기본 글씨색 */
+      color: #1b4332;
 
-  a {
-    color: #2d6a4f;
-    text-decoration: none;
-    font-weight: bold;
-  }
+      text-align: center;
+      height: 100vh;
+      margin: 0;
 
-  a:hover {
-    text-decoration: underline;
-  }
+      /* 가운데 정렬 */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      font-family: Arial, sans-serif;
+    }
+
+    /* 제목 */
+    h1 {
+
+      /* 제목 크기 증가 */
+      font-size: 60px;
+
+      /* 진한 초록 */
+      color: #0b3d2e;
+
+      margin-bottom: 10px;
+    }
+
+    p{
+      font-size: 22px;
+      margin-bottom: 30px;
+    }
+
+    /* 이미지 */
+    img{
+
+      width: 500px;
+
+      /* 배경 제거된 png 사용 시 깔끔하게 */
+      background: transparent;
+
+      margin-bottom: 50px;
+    }
+
+    /* 프로젝트 보기 버튼 */
+    .project-btn{
+
+      /* 직사각형 버튼 */
+      display: inline-block;
+
+      /* 기존보다 약 1.5배 크게 */
+      padding: 18px 40px;
+
+      background-color: #1b4332;
+
+      color: white;
+
+      text-decoration: none;
+
+      font-size: 24px;
+
+      font-weight: bold;
+
+      border-radius: 10px;
+
+      transition: 0.2s;
+    }
+
+    /* 마우스 올렸을 때 */
+    .project-btn:hover{
+
+      background-color: #24543f;
+
+      transform: scale(1.05);
+    }
+
   </style>
-  <img src="https://raw.githubusercontent.com/22woodstock/10826yeonwoojung.github.io/main/C3C4%EB%B9%84%EA%B5%90.jpg" width="500">
+</head>
+
+<body>
+
+  <h1>C3식물과 C4식물에 대해</h1>
+
+  <p>사이언스 아카이브 포트폴리오 10826 정연우</p>
+
+  <!-- 배경 제거된 이미지 -->
+  <img src="C3C4비교.png">
+
+  <!-- 버튼 -->
+  <a href="project.html" class="project-btn">
+    프로젝트 보기
+  </a>
+
+</body>
 </html>
